@@ -1,25 +1,17 @@
 const bodyParser = require('body-parser');
 const path = require('path');
 const express = require('express');
-const fs = require('fs');
+const expressStaticGzip = require("express-static-gzip");
 const controller = require('./controller');
 
 const app = express();
 
-app.get('*.js', (request, response, next) => {
-  if (fs.existsSync(request.url + '.br')) {
-    request.url += '.br';
-    response.set('Content-Encoding', 'br');
-  } else if (fs.existsSync(request.url + '.gz')) {
-    request.url += '.gz';
-    response.set('Content-Encoding', 'gzip');
-  }
-  next();
-});
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/stocks/:ticker', express.static(path.join(__dirname, 'dist')));
+app.use('/stocks/:ticker', expressStaticGzip(path.join(__dirname, 'dist'), {
+  enableBrotli: true,
+  orderPreference: ['br', 'gzip'],
+}));
 app.use(bodyParser.json());
 
 app.get('/api/stocks/:ticker', (req, res) => {
