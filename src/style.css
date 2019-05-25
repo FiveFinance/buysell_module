@@ -1,6 +1,14 @@
 @font-face {
-  font-family: "DINProRegular";
-  src: url("/fonts/DINProRegular.otf") format("opentype");
+  font-family: 'DINProRegular';
+  src:  url('/fonts/DINProRegular.eot');
+  src:  url('/fonts/DINProRegular.woff2') format('woff2'),
+        url('/fonts/DINProRegular.woff') format('woff'),
+        url('/fonts/DINProRegular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/DINProRegular.otf')  format('opentype'),
+        url('/fonts/DINProRegular.ttf')  format('truetype'),
+        url('/fonts/DINProRegular.svg#DINProRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
