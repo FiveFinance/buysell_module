@@ -1,6 +1,6 @@
 # TradeDesk Stock Order Microservice
 
-TradeDesk's Stock Order Microservice is the frontend component that allows users to buy/sell shares on a specific stock page. [Click here to interact with a deployed version of this component](http://ec2-54-183-100-147.us-west-1.compute.amazonaws.com/stocks/aapl/).
+TradeDesk's Stock Order Microservice is the frontend component that allows users to buy/sell shares on a specific stock page. [Click here to interact with a deployed version of this component](http://bit.ly/tradedesk-order-module).
 
 The component was built using React.js, Express/Node, MySQL (static data for development and demo purposes), and the microservice makes API queries to the `/stocks` and `/accounts` API.
 
